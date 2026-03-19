@@ -8,6 +8,7 @@ export default function Checkout() {
     const navigate = useNavigate();
     const [processing, setProcessing] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [finalTotal, setFinalTotal] = useState(0);
 
     const total = cartItems.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '')), 0);
 
@@ -31,6 +32,7 @@ export default function Checkout() {
                 clearInterval(interval);
                 document.body.style.backgroundColor = '';
                 setProcessing(false);
+                setFinalTotal(total);
                 setSuccess(true);
                 clearCart();
             }
@@ -46,7 +48,7 @@ export default function Checkout() {
             <div className="shop-section" style={{ minHeight: '60vh', textAlign: 'center' }}>
                 <h2 className="garish-title" style={{color: 'var(--nick-green)'}}>PAYMENT AUTHORIZED</h2>
                 <p style={{fontSize: '2rem', marginBottom: '30px', backgroundColor: 'black', display: 'inline-block', padding: '15px', color: 'var(--nick-yellow)', border: '4px solid var(--nick-orange)'}}>
-                    $ {total.toFixed(2)} extracted successfully from your capitalist holdings.
+                    $ {finalTotal.toFixed(2)} extracted successfully from your capitalist holdings.
                 </p>
                 <button className="metal-btn" onClick={() => navigate('/')} style={{display: 'block', margin: '0 auto', fontSize: '1.5rem', padding: '10px 20px'}}>
                     RETURN TO THE MOSHPIT

@@ -319,3 +319,95 @@ body {
     box-shadow: inset 1px 0 0 rgba(255,255,255,0.2);
     font-size: 11px;
 }
+
+/* Windows XP Header Components */
+.xp-header-container {
+    background: #ece9d8;
+    border-bottom: 2px solid #0058e6;
+    font-family: inherit;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.xp-window-header {
+    background: linear-gradient(to right, #0058e6 0%, #3a93ff 8%, #0058e6 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 6px;
+    font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.xp-window-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.xp-window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.xp-window-btn {
+    width: 22px;
+    height: 22px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+    box-shadow: inset -1px -1px 2px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,255,0.5);
+    text-shadow: none;
+    user-select: none;
+}
+
+.xp-window-btn.close {
+    background: linear-gradient(to bottom, #e38274 0%, #c43224 100%);
+    border-color: #fce2e1;
+}
+
+.xp-window-btn.minimize, .xp-window-btn.maximize {
+    background: linear-gradient(to bottom, #8db5e2 0%, #4669aa 100%);
+    border-color: #e2eeff;
+}
+
+.xp-window-btn:active {
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.xp-menu-bar {
+    display: flex;
+    gap: 10px;
+    padding: 2px 10px;
+    font-size: 0.85rem;
+    color: black;
+    background: #ece9d8;
+    border-bottom: 1px solid #d4d0c8;
+    font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
+}
+
+.xp-menu-item {
+    cursor: pointer;
+    padding: 2px 6px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid transparent;
+}
+
+.xp-menu-item:hover {
+    background: #316ac5;
+    color: white;
+    border: 1px solid #316ac5;
+}

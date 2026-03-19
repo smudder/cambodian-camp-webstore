@@ -34,15 +34,26 @@ function App() {
 
   return (
     <>
-      <header className="metal-header">
-          <div className="header-content">
-              <Link to="/" style={{textDecoration: 'none'}}>
-                  <h1 className="bold-logo">CAMBODIAN CAMP</h1>
+      <header className="xp-header-container">
+          <div className="xp-window-header">
+              <div className="xp-window-title">
+                  <span style={{fontSize: '1.2rem', textShadow: 'none'}}>🗔</span>
+                  <span>CAMBODIAN_CAMP.exe</span>
+              </div>
+              <div className="xp-window-controls">
+                  <div className="xp-window-btn minimize">_</div>
+                  <div className="xp-window-btn maximize">□</div>
+                  <div className="xp-window-btn close" onClick={() => alert('Nice try, punk.')}>X</div>
+              </div>
+          </div>
+          <div className="xp-menu-bar">
+              <span className="xp-menu-item">File</span>
+              <span className="xp-menu-item">Edit</span>
+              <span className="xp-menu-item">View</span>
+              <Link to="/" className="xp-menu-item">Storefront</Link>
+              <Link to="/cart" className="xp-menu-item" style={{fontWeight: 'bold', color: cartItems.length > 0 ? '#c43224' : 'black'}}>
+                  Cart ({cartItems.length})
               </Link>
-              <nav>
-                  <Link to="/" className="metal-btn">HOME</Link>
-                  <Link to="/cart" className="metal-btn cart-btn">CART ({cartItems.length})</Link>
-              </nav>
           </div>
       </header>
 

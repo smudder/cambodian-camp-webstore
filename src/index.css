@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+
+:root {
+    --nick-orange: #FF5A00;
+    --nick-green: #39FF14;
+    --nick-purple: #9D00FF;
+    --nick-blue: #00FFFF;
+    --nick-yellow: #FFFF00;
+    
+    --xp-blue: #245EDC;
+    --xp-light-blue: #3C81F3;
+    --xp-green: #3C9F24;
+    
+    --metal-base: #5a5a5a;
+    --metal-dark: #2c2c2c;
+    --metal-light: #9a9a9a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--nick-purple);
+    background-image: 
+        radial-gradient(circle at 10% 20%, var(--nick-orange) 10%, transparent 11%),
+        radial-gradient(circle at 80% 80%, var(--nick-green) 15%, transparent 16%),
+        linear-gradient(45deg, transparent 40%, var(--nick-blue) 40%, var(--nick-blue) 60%, transparent 60%);
+    background-size: 100px 100px, 150px 150px, 50px 50px;
+    font-family: "Impact", "Comic Sans MS", "Arial Black", sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.metal-header {
+    background: linear-gradient(0deg, var(--metal-dark) 0%, var(--metal-base) 50%, var(--metal-light) 100%);
+    background-image: repeating-linear-gradient(
+        45deg, 
+        rgba(0,0,0,0.1) 0px, 
+        rgba(0,0,0,0.1) 2px, 
+        transparent 2px, 
+        transparent 4px
+    ), linear-gradient(0deg, var(--metal-dark) 0%, var(--metal-base) 50%, var(--metal-light) 100%);
+    border-bottom: 5px solid #111;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.4);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bold-logo {
+    font-size: 2.5rem;
+    color: var(--nick-yellow);
+    text-shadow: 4px 4px 0px #000, -2px -2px 0px var(--nick-orange);
+    letter-spacing: 2px;
+    transform: rotate(-3deg);
+}
+
+.metal-btn {
+    background: #333;
+    color: var(--nick-green);
+    border: 3px solid #000;
+    padding: 8px 15px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 3px 3px 0 #000;
+    transition: all 0.1s;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.metal-btn:active {
+    box-shadow: 0 0 0 #000;
+    transform: translate(3px, 3px);
+}
+
+.hero-section {
+    height: 80vh;
+    background: url('/assets/punk_cambodian_baby_1773895365094.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 10px dashed var(--nick-yellow);
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border: 5px solid var(--nick-green);
+    border-radius: 20px;
+    text-align: center;
+    transform: rotate(2deg);
+    box-shadow: 15px 15px 0px var(--nick-orange);
+    backdrop-filter: blur(5px);
+}
+
+.garish-title {
+    font-size: 5rem;
+    color: var(--nick-blue);
+    text-shadow: 5px 5px 0px #000, 10px 10px 0px var(--nick-purple);
+    margin-bottom: 10px;
+    -webkit-text-stroke: 2px black;
+}
+
+.garish-subtitle {
+    font-size: 1.5rem;
+    color: var(--nick-yellow);
+    background: #000;
+    padding: 10px;
+    display: inline-block;
+    border: 2px solid var(--nick-orange);
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background: var(--nick-orange);
+    color: #000;
+    font-size: 2rem;
+    padding: 15px 40px;
+    border: 5px solid #000;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 5px 5px 0 #000;
+    text-transform: uppercase;
+}
+
+.shop-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--nick-green);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 0 #000;
+    background: #000;
+    display: inline-block;
+    padding: 15px 30px;
+    transform: skewX(-10deg);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: var(--nick-blue);
+    border: 6px solid #000;
+    box-shadow: 10px 10px 0 black, 20px 20px 0 var(--nick-orange);
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05) rotate(-2deg);
+    z-index: 10;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 4px solid #000;
+    background: #fff;
+}
+
+.product-info {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.product-info h4 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: var(--nick-purple);
+    background: var(--nick-yellow);
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid #000;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.buy-btn {
+    width: 100%;
+    background: var(--nick-green);
+    color: #000;
+    border: 4px solid #000;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 3px 3px 0 #000;
+}
+
+@keyframes jitterFunc {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(2px, -2px) rotate(1deg); }
+    50% { transform: translate(-2px, 2px) rotate(-1deg); }
+    75% { transform: translate(3px, 0px) rotate(2deg); }
+    100% { transform: translate(-1px, -1px) rotate(-2deg); }
+}
+
+.jitter:hover {
+    animation: jitterFunc 0.1s infinite;
+    background: var(--nick-yellow);
+}
+
+@keyframes spinSlightly {
+    0% { transform: rotate(0deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1.05); }
+}
+
+.product-card:hover img {
+    animation: spinSlightly 5s linear infinite;
+    border-radius: 50%;
+}
+
+.xp-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to bottom, #245EDC 0%, #3f8cf3 9%, #245EDC 18%, #245EDC 92%, #333 100%);
+    border-top: 1px solid #0831D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Tahoma', sans-serif;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+
+.xp-start-btn {
+    background: linear-gradient(to bottom, #3C9F24 0%, #328b1b 100%);
+    color: white;
+    height: 100%;
+    padding: 0 15px 0 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    border-right: 2px solid rgba(255,255,255,0.4);
+    box-shadow: inset 1px 1px 2px rgba(255,255,255,0.6), 2px 0 3px rgba(0,0,0,0.3);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.xp-logo {
+    font-style: normal;
+    font-size: 24px;
+    margin-right: 5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.xp-taskbar-tasks {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.xp-task {
+    background: #3C81F3;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #1a42a0;
+    box-shadow: inset 1px 1px 1px rgba(255,255,255,0.3);
+    font-size: 12px;
+    cursor: pointer;
+    min-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.xp-task.active {
+    background: #1c4bb4;
+    box-shadow: inset 2px 2px 3px rgba(0,0,0,0.4);
+}
+
+.xp-tray {
+    background: #0c59b9;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-left: 1px solid #134594;
+    box-shadow: inset 1px 0 0 rgba(255,255,255,0.2);
+    font-size: 11px;
+}

@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from './context/CartContext';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Manifesto from './pages/Manifesto';
 import './index.css';
 
 function App() {
   const [time, setTime] = useState('12:00 PM');
   const { cartItems } = useCart();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const updateTime = () => {
@@ -62,6 +65,7 @@ function App() {
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/manifesto" element={<Manifesto />} />
       </Routes>
 
       <footer className="xp-footer">
@@ -69,8 +73,18 @@ function App() {
               <span className="xp-logo">⊞</span> Start
           </div>
           <div className="xp-taskbar-tasks">
-              <div className="xp-task active">CAMBODIAN_DEATHCAMP.exe</div>
-              <div className="xp-task">doily_manifesto.txt</div>
+              <div 
+                  className={`xp-task ${location.pathname !== '/manifesto' ? 'active' : ''}`}
+                  onClick={() => navigate('/')}
+              >
+                  CAMBODIAN_DEATHCAMP.exe
+              </div>
+              <div 
+                  className={`xp-task ${location.pathname === '/manifesto' ? 'active' : ''}`}
+                  onClick={() => navigate('/manifesto')}
+              >
+                  doily_manifesto.txt
+              </div>
           </div>
           <div className="xp-tray">
               <span className="xp-time">{time}</span>

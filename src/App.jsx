@@ -6,10 +6,12 @@ import Product from './pages/Product';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Manifesto from './pages/Manifesto';
+import VirusOverlay from './components/VirusOverlay';
 import './index.css';
 
 function App() {
   const [time, setTime] = useState('12:00 PM');
+  const [virusActive, setVirusActive] = useState(false);
   const { cartItems } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
@@ -37,6 +39,8 @@ function App() {
 
   return (
     <>
+      <VirusOverlay active={virusActive} />
+      
       <header className="xp-header-container">
           <div className="xp-window-header">
               <div className="xp-window-title">
@@ -46,7 +50,7 @@ function App() {
               <div className="xp-window-controls">
                   <div className="xp-window-btn minimize">_</div>
                   <div className="xp-window-btn maximize">□</div>
-                  <div className="xp-window-btn close" onClick={() => alert('Nice try, punk.')}>X</div>
+                  <div className="xp-window-btn close" onClick={() => setVirusActive(true)}>X</div>
               </div>
           </div>
           <div className="xp-menu-bar">

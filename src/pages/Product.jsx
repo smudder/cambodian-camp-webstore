@@ -1,19 +1,25 @@
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import { createParticles } from '../utils/animations';
+import { useCart } from '../context/CartContext';
 
 export default function Product() {
     const { id } = useParams();
     const product = products.find(p => p.id === id);
+    const { addToCart } = useCart();
 
     const handleAddToCart = (e) => {
+        addToCart(product);
         createParticles(e.clientX, e.clientY);
         const colors = ['#FF5A00', '#39FF14', '#9D00FF', '#00FFFF', '#FFFF00'];
         document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
         setTimeout(() => {
             document.body.style.backgroundColor = '';
-            alert("ADDED TO CART. STAY PUNK.");
-        }, 300);
+            // Change button text or alert to show feedback? 
+            // Alerting stops JS event loop until dismissed, so we'll just flash colors.
+            alert("ADDED TO CART! PUNK IS NOT DEAD.");
+        }, 150);
     };
 
     if (!product) {

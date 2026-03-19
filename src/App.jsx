@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import { useCart } from './context/CartContext';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import './index.css';
 
 function App() {
   const [time, setTime] = useState('12:00 PM');
+  const { cartItems } = useCart();
 
   useEffect(() => {
     const updateTime = () => {
@@ -37,7 +39,7 @@ function App() {
               </Link>
               <nav>
                   <Link to="/" className="metal-btn">HOME</Link>
-                  <a href="#cart" className="metal-btn cart-btn">CART (0)</a>
+                  <a href="#cart" className="metal-btn cart-btn">CART ({cartItems.length})</a>
               </nav>
           </div>
       </header>

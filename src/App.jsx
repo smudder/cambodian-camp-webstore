@@ -38,7 +38,7 @@ function App() {
           <div className="xp-window-header">
               <div className="xp-window-title">
                   <span style={{fontSize: '1.2rem', textShadow: 'none'}}>🗔</span>
-                  <span>CAMBODIAN_CAMP.exe</span>
+                  <span>CAMBODIAN_DEATHCAMP.exe</span>
               </div>
               <div className="xp-window-controls">
                   <div className="xp-window-btn minimize">_</div>
@@ -69,7 +69,7 @@ function App() {
               <span className="xp-logo">⊞</span> Start
           </div>
           <div className="xp-taskbar-tasks">
-              <div className="xp-task active">CAMBODIAN_CAMP.exe</div>
+              <div className="xp-task active">CAMBODIAN_DEATHCAMP.exe</div>
               <div className="xp-task">doily_manifesto.txt</div>
           </div>
           <div className="xp-tray">

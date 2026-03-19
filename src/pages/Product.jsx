@@ -33,8 +33,8 @@ export default function Product() {
 
     return (
         <div className="shop-section" style={{ minHeight: '70vh' }}>
-            <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', backgroundColor: 'var(--nick-blue)', border: '8px solid black', padding: '30px', boxShadow: '15px 15px 0 var(--nick-orange)' }}>
-                <div style={{ flex: '1', minWidth: '300px' }}>
+            <div className="product-container" style={{ display: 'flex', gap: '40px', flexWrap: 'wrap', backgroundColor: 'var(--nick-blue)', border: '8px solid black', padding: '30px', boxShadow: '15px 15px 0 var(--nick-orange)' }}>
+                <div className="product-img-col" style={{ flex: '1', minWidth: '300px' }}>
                     <img 
                         src={product.image} 
                         alt={product.name} 
@@ -43,7 +43,7 @@ export default function Product() {
                     />
                 </div>
                 <div style={{ flex: '1', minWidth: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <h2 className="garish-title" style={{ fontSize: '4rem', WebkitTextStroke: '1px black', textAlign: 'left', marginBottom: '10px' }}>
+                    <h2 className="garish-title product-title" style={{ fontSize: '4rem', WebkitTextStroke: '1px black', textAlign: 'left', marginBottom: '10px' }}>
                         {product.name}
                     </h2>
                     <p className="price" style={{ fontSize: '2.5rem', marginBottom: '30px' }}>{product.price}</p>

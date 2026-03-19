@@ -59,21 +59,21 @@ export default function Checkout() {
 
     return (
         <div className="shop-section" style={{ minHeight: '60vh', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ backgroundColor: 'var(--nick-blue)', border: '8px solid black', padding: '40px', width: '100%', maxWidth: '600px', boxShadow: '20px 20px 0 var(--nick-orange)'}}>
-                <h2 className="garish-title" style={{fontSize: '3rem', textAlign: 'center', marginBottom: '20px'}}>SECURE TERMINAL</h2>
+            <div className="checkout-container" style={{ backgroundColor: 'var(--nick-blue)', border: '8px solid black', padding: '40px', width: '100%', maxWidth: '600px', boxShadow: '20px 20px 0 var(--nick-orange)'}}>
+                <h2 className="garish-title checkout-title" style={{fontSize: '3rem', textAlign: 'center', marginBottom: '20px'}}>SECURE TERMINAL</h2>
                 
                 <h3 style={{fontSize: '2rem', textAlign: 'center', marginBottom: '20px', backgroundColor: 'black', color: 'white', padding: '10px', WebkitTextStroke: '1px var(--nick-yellow)'}}>
                     DUE: ${total.toFixed(2)}
                 </h3>
 
-                <form onSubmit={handlePayment} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <form className="checkout-form" onSubmit={handlePayment} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                     
                     <div>
                         <label style={{fontWeight: 'bold', fontSize: '1.5rem', color: 'black', display: 'block'}}>CARD NUMBER</label>
                         <input required type="text" placeholder="0000 0000 0000 0000" pattern="[\d ]{16,19}" maxLength="19" style={{ width: '100%', padding: '15px', fontSize: '1.5rem', border: '5px solid black', fontFamily: 'inherit', outline: 'none', backgroundColor: 'var(--nick-yellow)', color: 'black' }} />
                     </div>
 
-                    <div style={{ display: 'flex', gap: '20px' }}>
+                    <div className="checkout-row" style={{ display: 'flex', gap: '20px' }}>
                         <div style={{ flex: '1' }}>
                             <label style={{fontWeight: 'bold', fontSize: '1.5rem', color: 'black', display: 'block'}}>EXPIRY</label>
                             <input required type="text" placeholder="MM/YY" pattern="\d\d/\d\d" maxLength="5" style={{ width: '100%', padding: '15px', fontSize: '1.5rem', border: '5px solid black', fontFamily: 'inherit', outline: 'none', backgroundColor: 'var(--nick-yellow)', color: 'black' }} />

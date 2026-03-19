@@ -411,3 +411,112 @@ body {
     color: white;
     border: 1px solid #316ac5;
 }
+
+/* Mobile Responsiveness Overrides */
+@media screen and (max-width: 768px) {
+    /* Hero Scaling */
+    .garish-title {
+        font-size: 3rem !important;
+        text-shadow: 3px 3px 0px #000, 6px 6px 0px var(--nick-purple) !important;
+        -webkit-text-stroke: 1px black !important;
+    }
+    .garish-subtitle {
+        font-size: 1.2rem !important;
+        padding: 5px 10px !important;
+        margin-bottom: 15px !important;
+    }
+    .action-btn {
+        font-size: 1.2rem !important;
+        padding: 10px 20px !important;
+    }
+    .hero-section {
+        height: 60vh !important;
+    }
+    .hero-overlay {
+        padding: 20px !important;
+        transform: rotate(1deg) !important;
+        width: 90% !important;
+    }
+
+    /* Shop Grid Layout */
+    .shop-section {
+        padding: 10px !important;
+        margin: 20px auto !important;
+    }
+    .section-title {
+        font-size: 2rem !important;
+        padding: 10px 20px !important;
+    }
+    .product-grid {
+        gap: 20px !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* XP Header Mobile */
+    .xp-window-title {
+        font-size: 0.9rem !important;
+        gap: 4px !important;
+    }
+    .xp-window-btn {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 0.6rem !important;
+    }
+    .xp-menu-bar {
+        font-size: 0.75rem !important;
+        gap: 5px !important;
+        padding: 2px 5px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    .xp-menu-item {
+        padding: 2px 4px !important;
+    }
+
+    /* XP Footer Mobile */
+    .xp-start-btn {
+        font-size: 14px !important;
+        padding: 0 5px !important;
+    }
+    .xp-logo {
+        font-size: 16px !important;
+    }
+    .xp-task.active {
+        min-width: unset !important;
+        max-width: 100px !important;
+        font-size: 10px !important;
+    }
+    .xp-task:not(.active) {
+        display: none !important;
+    }
+    .xp-tray {
+        font-size: 10px !important;
+        padding: 0 5px !important;
+    }
+
+    /* Checkout & Product Layout Stacking */
+    .checkout-container {
+        padding: 20px !important;
+        border-width: 4px !important;
+    }
+    .checkout-row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .checkout-title {
+        font-size: 2rem !important;
+    }
+    
+    .product-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 15px !important;
+    }
+    .product-img-col {
+        min-width: 100% !important;
+    }
+    .product-title {
+        font-size: 2.5rem !important;
+        line-height: 1 !important;
+    }
+}
